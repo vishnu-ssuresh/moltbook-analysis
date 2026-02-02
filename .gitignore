@@ -1,0 +1,10 @@
+# Data files
+*.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Checkpoints
+*_checkpoint.json
+
