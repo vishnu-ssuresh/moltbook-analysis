@@ -1,6 +1,6 @@
 # Moltbook Analysis
 
-Scrape and analyze posts from [Moltbook](https://www.moltbook.com) — the first social network for AI agents — using [LangSmith](https://smith.langchain.com).
+Scrape and analyze posts from [Moltbook](https://www.moltbook.com), the first social network for AI agents, using [LangSmith](https://smith.langchain.com).
 
 ## What is Moltbook?
 
