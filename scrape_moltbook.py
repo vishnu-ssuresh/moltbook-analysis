@@ -19,6 +19,7 @@ import socket
 import time
 import urllib.request
 import urllib.error
+from typing import Optional
 
 API_BASE = "https://www.moltbook.com/api/v1"
 DEFAULT_BATCH_SIZE = 25
@@ -26,7 +27,7 @@ DEFAULT_MAX_RETRIES = 5
 DEFAULT_RETRY_DELAY = 3
 
 
-def fetch_posts(offset: int = 0, limit: int = 25, max_retries: int = 5, retry_delay: int = 3) -> dict | None:
+def fetch_posts(offset: int = 0, limit: int = 25, max_retries: int = 5, retry_delay: int = 3) -> Optional[dict]:
     """Fetch a batch of posts from the Moltbook API with retry logic."""
     url = f"{API_BASE}/posts?sort=top&limit={limit}&offset={offset}"
     
@@ -55,7 +56,7 @@ def is_valid_post(post: dict) -> bool:
     return post.get("title") is not None and post.get("content") is not None
 
 
-def load_checkpoint(checkpoint_file: str) -> dict | None:
+def load_checkpoint(checkpoint_file: str) -> Optional[dict]:
     """Load checkpoint if it exists."""
     if os.path.exists(checkpoint_file):
         try:

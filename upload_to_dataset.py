@@ -15,13 +15,14 @@ This creates a dataset where each post is stored as an example with:
 import argparse
 import json
 import os
+from typing import Optional
 from langsmith import Client
 
 
 def upload_to_dataset(
     input_file: str,
     dataset_name: str = "moltbook_posts",
-    limit: int | None = None
+    limit: Optional[int] = None
 ):
     """
     Upload Moltbook posts to a LangSmith dataset.

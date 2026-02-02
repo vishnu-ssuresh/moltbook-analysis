@@ -17,13 +17,14 @@ import json
 import os
 import uuid
 from datetime import datetime
+from typing import Optional
 from langsmith import Client
 
 
 def upload_to_tracing(
     input_file: str,
     project_name: str = "moltbook-analysis",
-    limit: int | None = None
+    limit: Optional[int] = None
 ):
     """
     Upload Moltbook posts to a LangSmith tracing project.
